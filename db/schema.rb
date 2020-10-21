@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_21_141044) do
+ActiveRecord::Schema.define(version: 2020_10_21_165226) do
 
   create_table "documents", force: :cascade do |t|
     t.integer "event_id"
@@ -50,14 +50,14 @@ ActiveRecord::Schema.define(version: 2020_10_21_141044) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
     t.string "password_digest"
     t.string "title"
-    t.datetime "date_started"
     t.text "bio"
     t.string "security_clearance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "last_name"
   end
 
 end
