@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_21_165226) do
+ActiveRecord::Schema.define(version: 2020_10_22_125927) do
 
   create_table "documents", force: :cascade do |t|
     t.integer "event_id"
@@ -42,6 +42,21 @@ ActiveRecord::Schema.define(version: 2020_10_21_165226) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "people", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.text "bio"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "person_events", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "person_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "user_events", force: :cascade do |t|
     t.integer "user_id"
     t.integer "event_id"
@@ -50,14 +65,13 @@ ActiveRecord::Schema.define(version: 2020_10_21_165226) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name"
     t.string "password_digest"
     t.string "title"
-    t.text "bio"
     t.string "security_clearance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "last_name"
+    t.string "name"
+    t.integer "person_id"
   end
 
 end
