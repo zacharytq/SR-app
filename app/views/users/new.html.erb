@@ -1,6 +1,10 @@
 <%= form_for @user do |f| %>
-<%= f.text_field :first_name %>
-<%= f.text_field :last_name %>
+<%= f.text_field :name %>
+<%= f.fields_for :person do |per| %>
+    <%= per.text_field :first_name %>
+    <%= per.text_field :last_name %>
+    <%= per.text_area :bio %>
+<% end %>
 <%= f.text_field :password %>
 <%= f.submit "Welcome to the Southern Reach"%>
 <% end %>

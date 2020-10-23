@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     def new
         @user = User.new
+        @user.build_person()
     end
 
     def create
@@ -23,6 +24,12 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :password)
+        params.require(:user).permit(:name,
+                                     :password,
+                                     person_attributes: [
+                                         :first_name,
+                                         :last_name,
+                                         :bio
+                                     ])
     end
 end

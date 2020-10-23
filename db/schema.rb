@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_22_125927) do
+ActiveRecord::Schema.define(version: 2020_10_22_130701) do
+
+  create_table "document_people", force: :cascade do |t|
+    t.integer "person_id"
+    t.integer "document_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "documents", force: :cascade do |t|
     t.integer "event_id"
