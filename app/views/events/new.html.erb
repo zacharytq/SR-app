@@ -1,0 +1,19 @@
+<%= form_for @event do |f| %>
+    <%= f.label "Name" %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label "Location" %><br>
+    <%= f.text_field :location %><br>
+    <%= f.label "Date" %><br>
+    <%= f.text_field :date %><br>
+    <%= f.label "Description" %><br>
+    <%= f.text_field :description %><br>
+    <%= f.label "Security Clearance" %><br>
+    <%= f.select :security_clearance, options_for_select(current_user.user_clearance_options) %><br />
+    <%= f.collection_check_boxes :people, Person.all, :id, :full_name %><br />
+    <%= fields_for @event.people.build do |pers| %>
+        <%= pers.text_field :first_name %>
+        <%= pers.text_field :last_name %>
+        <%= pers.text_field :bio %>
+    <% end %>
+    <%= f.submit %>
+    <% end %>

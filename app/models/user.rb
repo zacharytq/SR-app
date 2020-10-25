@@ -11,6 +11,19 @@ class User < ApplicationRecord
         self.created_at.strftime("%B %e, %Y")
     end
 
+    def user_clearance_options
+        case self.security_clearance
+        when "Declassified"
+            ["Declassified"]
+        when "Classified"
+            ["Declassified", "Classified"]
+        when "Secret"
+            ["Declassified", "Classified", "Secret"]
+        when "Top Secret"
+            ["Declassified", "Classified", "Secret", "Top Secret"]
+        end
+    end
+
     private
     def set_clearance
         self.security_clearance = "Declassified"
