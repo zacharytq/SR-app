@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
     def index
-        @events = Event.all
+        @events = cleared_objects(Event.all)
     end
 
     def show

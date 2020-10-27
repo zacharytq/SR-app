@@ -4,7 +4,7 @@ class User < ApplicationRecord
     belongs_to :person
     has_many :notes
     has_many :documents
-    before_save :set_clearance, :set_title
+    #before_save :set_clearance, :set_title
     accepts_nested_attributes_for :person
 
     def date_started

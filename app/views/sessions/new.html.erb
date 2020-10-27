@@ -1,6 +1,5 @@
 <%= form_tag sessions_path do %>
-    <%= text_field_tag :first_name, :first_name, placeholder: "First Name"%>
-    <%= text_field_tag :last_name, :last_name, placeholder: "Last Name"%>
+    <%= text_field_tag :name, :name, placeholder: "Name"%>
     <%= text_field_tag :password, :password, placeholder: "Password"%>
     <%= submit_tag "Signin"%>
 <% end %>

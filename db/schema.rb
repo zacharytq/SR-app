@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_130701) do
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.datetime "date"
+    t.date "date"
     t.text "description"
     t.string "security_clearance"
     t.datetime "created_at", precision: 6, null: false

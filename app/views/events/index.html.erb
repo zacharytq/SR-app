@@ -1,0 +1,5 @@
+<% @events.each do |event| %>
+
+<%= link_to "#{event.name}", event_path(event) %>
+<h4><%= event.security_clearance %></h4>
+<% end %>
