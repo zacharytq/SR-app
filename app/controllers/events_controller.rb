@@ -1,3 +1,4 @@
+class Appl
 class EventsController < ApplicationController
 
     def index

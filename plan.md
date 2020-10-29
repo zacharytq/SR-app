@@ -15,6 +15,20 @@
 - Notes: user_id, document_id, title, content, date_created, security_clearance
 - Events: date, location, title, description, security_clearance.
 
-## Todo
+## Requirements
 
-User has home page that shows events they have clearance to see, in chronological order.
+- [ x ] Include 1 has_many, 1 belongs_to, 2 has_many through relationships.
+- [ x ] Include a many to many relationship through a join table that has at least one user submittable attribute.
+- [  ] Models must validate for simple attributes.
+- [  ] Must use 1 ActiveRecord scope method. Must be chainable. Must use ActiveRecord Query methods.
+- [ x ] Must has standard user authentication.
+- [  ] Must have omniauth login.
+- [  ] Must use nested routes with appropriate RESTful API.
+- [  ] Forms must present validation errors with a fields_with_errors class.
+- [  ] Application must be reasonably DRY. 
+
+## TODO
+
+- [  ] Make validations for all models.
+- [  ] Set up nested routes.
+- [  ] Make Admin namespace.
