@@ -32,3 +32,4 @@
 - [  ] Make validations for all models.
 - [  ] Set up nested routes.
 - [  ] Make Admin namespace.
+- [  ] 
