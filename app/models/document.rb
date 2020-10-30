@@ -3,6 +3,8 @@ class Document < ApplicationRecord
     belongs_to :user
     has_many :document_people
     has_many :people, through: :document_people
+    validates :title, presence: true
+    validates :content, presence: true  
     accepts_nested_attributes_for :people, reject_if: :rejectable
 
     private
